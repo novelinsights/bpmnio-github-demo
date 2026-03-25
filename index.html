@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>BPMN Viewer</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/bpmn-js@18.8.0/dist/assets/diagram-js.css">
+  <link rel="stylesheet" href="https://unpkg.com/bpmn-js@18.8.0/dist/assets/bpmn-font/css/bpmn.css">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    #canvas {
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="canvas"></div>
+
+  <script src="https://unpkg.com/bpmn-js@18.8.0/dist/bpmn-viewer.development.js"></script>
+
+  <script>
+    const viewer = new BpmnJS({
+      container: '#canvas'
+    });
+
+    fetch('./diagram.bpmn')
+      .then(response => response.text())
+      .then(xml => viewer.importXML(xml))
+      .then(() => viewer.get('canvas').zoom('fit-viewport'))
+      .catch(err => console.error(err));
+  </script>
+</body>
+</html>
