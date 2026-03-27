@@ -20,7 +20,7 @@
       <bpmn:outgoing>Flow_01ahdon</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_1wwex12" name="yes" sourceRef="Gateway_1qmpord" targetRef="Activity_05ivakm" />
-    <bpmn:task id="Activity_02dvt87" name="Revise Doocument">
+    <bpmn:task id="Activity_02dvt87" name="Revise Document">
       <bpmn:incoming>Flow_0r7nnjh</bpmn:incoming>
       <bpmn:outgoing>Flow_1ierfen</bpmn:outgoing>
     </bpmn:task>
